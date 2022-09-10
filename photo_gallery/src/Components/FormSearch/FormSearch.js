@@ -1,38 +1,41 @@
 // import { useState } from "react";
-import {  useSearch, useSetSearch } from "../../Contexts/SearchContext";
-// import useFetch from "../../hooks/useFetch";
+import { useState } from "react";
 
+const FormSearch = ({ setResult }) => {
 
-const FormSearch = () => {
-  
-  //  const [search,setSearch] = useState('');
-   const search = useSearch();
-   const setSearch = useSetSearch();
-   console.log('i am search',search)
-   
+  const [search, setSearch] = useState('');
 
-
-    //segundo intento
-    // const data = useFetch()
-
-   const handle=(e)=>{
+  const handle = async (e) => {
     e.preventDefault();
-    
+    //creo la query
+    const queryParams = new URLSearchParams();
+    queryParams.append('query', search);
+    queryParams.append('locale', 'es-ES');
+    queryParams.append('per_pages', 80)
+
+    const res = await fetch(`https://api.pexels.com/v1/search?query=${queryParams.toString()}`,
+      {
+        headers: {
+          Authorization: process.env.REACT_APP_API_KEY
+        }
+      })
+    const data = await res.json();
+    setResult(data.photos)
+    console.log(data)
+
   }
-    return (
-      <>
-        <form onSubmit={handle}>
-           <input 
-            onChange={(e) => setSearch(e.target.value)}
-           value={search}
-           placeholder='Introduce your search'
-           ></input>
-           <button>search</button>
-        </form>
-        {/* <ul>{itemsSearches.photos.map(photo=>
-          <li>{photo.src.medium}</li>
-          )}</ul> */}
-      </>
-    )
+  return (
+    <>
+      <form onSubmit={handle}>
+        <input
+          onChange={(e) => setSearch(e.target.value)}
+          value={search}
+          placeholder='Introduce your search'
+        ></input>
+        <button>search</button>
+      </form>
+
+    </>
+  )
 }
 export default FormSearch;
