@@ -1,5 +1,6 @@
 // import { useState } from "react";
 import { useState } from "react";
+import './FormSearch.css'
 
 const FormSearch = ({ setResult }) => {
 
@@ -21,7 +22,7 @@ const FormSearch = ({ setResult }) => {
       })
     const data = await res.json();
     setResult(data.photos)
-    console.log(data)
+   
 
   }
   return (

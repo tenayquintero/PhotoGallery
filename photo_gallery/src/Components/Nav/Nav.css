@@ -1,0 +1,24 @@
+.nav{
+padding: 1rem;
+}
+.nav-buttons{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:1rem;
+    margin-top:2rem;
+}
+.nav-button{
+    height: 30px;
+    color:rgb(219, 116, 225);
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+   
+    
+}
+.nav-button.search-photos{
+    box-shadow: 1px 0px 4px 2px   rgb(193, 182, 204);
+}
+.nav-button.my-photos{
+box-shadow: 1px 0px 4px 2px rgb(193, 182, 204);}

@@ -1,5 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .App {
   text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Playfair Display', serif;
+
 }
+.App-header{
+  height: 150px;
+  
+
+}
+.App-main{
+    flex-grow: 1;
+
+}
+h1 {
+  font-size: 40px;
+ 
+}
+ h1, h2 {
+   font-size: 30px;
+   background: rgb(92, 139, 139);
+   background-image: linear-gradient(0deg, rgba(92, 139, 139, 0.9981034650188201) 0%, rgba(102, 89, 206, 1) 100%);
+   color: transparent;
+   background-clip: text;
+ }
+ footer{
+  padding: 0.5rem;
+  font-weight: bold;
+ }
 
 

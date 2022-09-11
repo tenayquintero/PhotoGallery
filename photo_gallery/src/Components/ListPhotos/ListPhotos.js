@@ -1,4 +1,5 @@
 import Photo from "../Photo/Photo";
+import './ListPhotos.css'
 
 
 const ListPhotos = ({ result, addToFavorite })=>{

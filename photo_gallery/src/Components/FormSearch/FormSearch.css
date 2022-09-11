@@ -1,0 +1,20 @@
+form{
+    margin-top: 2rem;
+
+}
+form input{
+    height: 30px;
+    border-color: blueviolet;
+    border-radius: 15px;
+    padding: 0.5rem;
+} 
+form > button{
+       height: 30px;
+        border-color: blueviolet;
+        border-radius: 10px;
+        margin-left: 0.5rem;
+        width: 60px;
+        background: rgb(92, 139, 139);
+        background: linear-gradient(0deg, rgba(92, 139, 139, 0.9981034650188201) 0%, rgba(102, 89, 206, 1) 100%);
+
+}
